@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <script src="./files/head.js"></script>        <meta name="viewport" content="width=device-width, initial-scale=1">    <link rel="shortcut icon" href="http://physadept.csail.mit.edu/images/favicon.ico">
+    <meta name="description" content="ReAct: Synergizing Reasoning and Acting in Language Models">
+    <meta name="keywords" content="Princeton,Google,Natural Language Processing, Reasoning, Decision Making, Prompting, Language Model, Large Language Model, Artificial Intelligence, AI, Computer Science">
+
+    <title>ReAct: Synergizing Reasoning and Acting in Language Models</title>
+    <link rel="stylesheet" href="./files/font.css">
+    <link rel="stylesheet" href="./files/main.css">
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1007.0" data-gr-ext-installed="">
+
+<div class="outercontainer">
+    <div class="container">
+
+        <div class="content project_title">
+            <h1>ReAct: Synergizing Reasoning and Acting in Language Models</h1>
+             <div class="authors">
+                            <a href="https://ysymyth.github.io">Shunyu Yao</a>,
+                            <a href="http://descrip.github.io">Jeffrey Zhao</a>,
+                            <a href="https://diandyu.github.io">Dian Yu</a>,
+                            <a href="https://research.google/people/104844/">Nan Du</a>,
+                            <a href="https://research.google/people/IzhakShafran/">Izhak Shafran</a>,
+                            <a href="https://www.cs.princeton.edu/~karthikn/">Karthik Narasimhan</a>,
+                            <a href="https://research.google/people/YuanCao/">Yuan Cao</a>
+            </div>
+            <!-- <br> -->
+                <a href="https://arxiv.org/abs/2210.03629"><b>[Paper]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://github.com/ysymyth/ReAct"><b>[Code]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://ai.googleblog.com/2022/11/react-synergizing-reasoning-and-acting.html"><b>[Blogpost]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="./files/bib.txt"><b>[BibTex]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <a href="./files/textgame_naacl_poster.pdf"><b>[Poster]</b></a> &nbsp;&nbsp;&nbsp;&nbsp; -->
+                <!-- <a href="./files/textgame_naacl_slides.pdf"><b>[Slides]</b></a> &nbsp;&nbsp;&nbsp;&nbsp; -->
+            <!-- <br> -->
+        </div>
+
+        <div class="content project_headline">
+            <div class="img">
+                <img class="img_responsive" src="./files/diagram.png" alt="frames">
+            </div>
+            <div class="text">
+                <p>Language models are getting better at reasoning (e.g. chain-of-thought prompting) and acting (e.g. WebGPT, SayCan, ACT-1), but these two directions have remained separate. </br>
+                <b style="color:#FF0000">ReAct asks, what if these two fundamental capabilities are combined?</b></p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="text">
+                <h3>Abstract</h3>
+                <p>While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples.</p>
+            </div>
+        </div>
+        
+        <div class="results">
+            <div class="text">
+                <h3>Results</h3>
+                <p>
+                ReAct achieves state-of-the-art few-shot performances across a variety of tasks, from question answering to online shopping!
+                </p>
+            </div>
+            <div class="img">
+                <img class="img_responsive" src="./files/results.png" alt="frames">
+            </div>
+        </div>
+
+
+        <div class="examples">
+            <div class="text">
+                <h3>Example: Reasoning Tasks (HotpotQA)</h3>
+                <p>
+                While the reason-only baseline (i.e. chain-of-thought) suffers from fact hallunication and the act-only baseline suffers from the lack of reasoning, ReAct presents more interpretable and factual task-solving trajectories.
+                </p>
+            </div>
+            <div class="img">
+                <img class="img_responsive" src="./files/hotpotqa.png" alt="frames">
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+<div class="crt-wrapper"></div><div class="ua-wrapper"></div></body><div class="ua-caa-wrapper"></div></html>
