@@ -49,29 +49,31 @@
 
         <div class="content">
             <div class="text">
-                <h3>Abstract</h3>
+                <h2>Abstract</h2>
                 <p>While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples.</p>
             </div>
         </div>
         
         <div class="results">
             <div class="text">
-                <h3>Results</h3>
+                <h2>ReAct Prompting</h2>
                 <p>
-                ReAct achieves state-of-the-art few-shot performances across a variety of tasks, from question answering to online shopping!
+                A ReAct prompt consists of few-shot task-solving trajectories, with human-written text reasoning traces and actions, as well as environment observations in response to actions (see examples in paper appendix!) </br>
+                ReAct prompting is intuitive and flexible to design, and achieves state-of-the-art few-shot performances across a variety of tasks, from question answering to online shopping!
                 </p>
             </div>
             <div class="img">
                 <img class="img_responsive" src="./files/results.png" alt="frames">
             </div>
-        </div>
 
 
-        <div class="examples">
+                <div class="examples">
             <div class="text">
-                <h3>Example: Reasoning Tasks (HotpotQA)</h3>
+                <h4>HotpotQA Example</h4>
                 <p>
-                While the reason-only baseline (i.e. chain-of-thought) suffers from fact hallunication and the act-only baseline suffers from the lack of reasoning, ReAct presents more interpretable and factual task-solving trajectories.
+                The reason-only baseline (i.e. chain-of-thought) suffers from misinformation (in red) as it is not grounded to external environments to obtain and update knowledge, and has to rely on limited internal knowledge. </br>
+                The act-only baseline suffers from the lack of reasoning, unable to synthesize the final answer despite having the same actions and observation as ReAct in this case. </br>
+                In contrast, ReAct solves the task with a interpretable and factual trajectory.
                 </p>
             </div>
             <div class="img">
@@ -79,7 +81,38 @@
             </div>
         </div>
 
+        <div class="examples">
+            <div class="text">
+                <h4>ALFWorld Example</h4>
+                <p>
+                For decision making tasks, we design human trajectories with sparse reasoning traces, letting the LM decide when to think vs. act. </br>
+                ReAct isn't perfect --- below is a failure example on ALFWorld. However, ReAct format allows easy human inspection and behavior correction by changing a couple of model thoughts, an exciting novel approach to human alignment!
+                </p>
+            </div>
+            <div class="img">
+                <img class="img_responsive" src="./files/alfworld.png" alt="frames">
+            </div>
+        </div>
 
+        </div>
+
+
+
+
+        <div class="results">
+            <div class="text">
+                <h2>ReAct Finetuning: Initial Results</h2>
+                <p>
+                    Prompting has limited context window and learning support. 
+                    Initial finetuning results on HotpotQA using ReAct prompting trajectories suggest:
+                    (1) ReAct is the best fintuning format across model sizes; 
+                    (2) ReAct finetuned smaller models outperform prompted larger models!
+                </p>
+            </div>
+            <div class="img">
+                <img class="img_responsive" src="./files/hotpot_finetune.png" alt="frames">
+            </div>
+        </div>
 
     </div>
 </div>
